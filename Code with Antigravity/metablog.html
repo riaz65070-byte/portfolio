@@ -1,0 +1,180 @@
+<!DOCTYPE html <html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetaBlog - Riaz Ullah</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            bg: 'rgb(248, 246, 242)',
+                            text: '#222',
+                            meta: '#888',
+                            border: '#e5e5e0',
+                            red: '#990000',
+                            tag: '#f0f0ed',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"EB Garamond"', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                    fontSize: {
+                        'xxs': '0.65rem',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: theme('colors.brand.bg');
+            color: theme('colors.brand.text');
+        }
+
+        .nav-link {
+            @apply text-brand-meta hover:text-black transition-colors duration-200 uppercase tracking-widest text-[10px];
+        }
+
+        .nav-link.active {
+            @apply border border-red-800 px-2 py-0.5 rounded-full;
+        }
+    </style>
+</head>
+
+<body class="font-sans text-sm pb-12">
+    <!-- Header Section (Edge-to-Edge Line) -->
+    <div class="border-b border-brand-border">
+        <div class="max-w-[1200px] mx-auto px-6 sm:px-12 lg:px-16">
+            <header class="py-3 flex flex-col md:flex-row justify-between items-center gap-4">
+                <div class="font-serif text-lg tracking-wide cursor-pointer hover:opacity-80">Riaz Ullah</div>
+                <nav class="flex flex-wrap justify-center gap-6 font-mono">
+                    <a href="#" class="nav-link">Work</a>
+                    <a href="#" class="nav-link">Experience</a>
+                    <a href="#" class="nav-link">Awards</a>
+                    <a href="metablog.html"
+                        class="nav-link active border border-red-800 px-2 py-0.5 rounded-full hover:border-black">#MetaBlog</a>
+                    <a href="#"
+                        class="nav-link border border-red-800 px-2 py-0.5 rounded-full hover:border-black">#Visual
+                        Journey</a>
+                    <a href="https://x.com/To_be_rizz" target="_blank" rel="noopener noreferrer" class="nav-link">X</a>
+                    <a href="https://www.linkedin.com/in/md-riaz-ullah-39179933a/" target="_blank"
+                        rel="noopener noreferrer" class="nav-link">LinkedIn</a>
+                </nav>
+            </header>
+        </div>
+    </div>
+
+    <!-- Blog List Section -->
+    <div class="border-b border-brand-border">
+        <div class="max-w-[1200px] mx-auto px-6 sm:px-12 lg:px-16 py-8">
+            <h2 class="font-serif text-2xl mb-6">My Blogs</h2>
+            <!-- Placeholder for blog entries -->
+            <div class="space-y-8">
+                <!-- Blog Post 1 -->
+                <article id="article-1" class="border border-brand-border p-4 rounded-lg">
+                    <h3 class="font-serif text-xl mb-2">Exploring the Power of Storytelling</h3>
+                    <p class="text-gray-600 text-sm mb-2">Jan 15, 2026 • Journalism</p>
+                    <p class="text-gray-700">Storytelling remains a vital tool for journalists to captivate audiences.
+                        In this post, we dive into techniques that make narratives compelling.</p>
+
+                    <a href="blog1.html" class="nav-link text-brand-meta hover:text-black text-sm">Read more →</a>
+                </article>
+                <div id="full-1" class="hidden mt-4 border border-brand-border p-4 rounded-lg bg-white">
+                    <h3 class="font-serif text-xl mb-2">Exploring the Power of Storytelling (Full Article)</h3>
+                    <p class="text-gray-700">Long form content goes here. Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. ...</p>
+                    <a href="javascript:void(0)" data-close="full-1"
+                        class="text-brand-meta hover:text-black text-sm">Close</a>
+                </div>
+                <!-- Blog Post 2 -->
+                <article class="border border-brand-border p-4 rounded-lg">
+                    <h3 class="font-serif text-xl mb-2">Data Visualization Trends 2026</h3>
+                    <p class="text-gray-600 text-sm mb-2">Feb 3, 2026 • Data</p>
+                    <p class="text-gray-700">A look at the emerging trends in data visualization, from interactive
+                        dashboards to immersive AR experiences.</p>
+                    <a href="blog2.html" class="nav-link text-brand-meta hover:text-black text-sm">Read more →</a>
+                </article>
+                <div id="full-2" class="hidden mt-4 border border-brand-border p-4 rounded-lg bg-white">
+                    <h3 class="font-serif text-xl mb-2">Data Visualization Trends 2026 (Full Article)</h3>
+                    <p class="text-gray-700">Full article content placeholder for Data Visualization Trends.</p>
+                    <a href="javascript:void(0)" data-close="full-2"
+                        class="text-brand-meta hover:text-black text-sm">Close</a>
+                </div>
+                <!-- Blog Post 3 -->
+                <article class="border border-brand-border p-4 rounded-lg">
+                    <h3 class="font-serif text-xl mb-2">The Future of Digital Journalism</h3>
+                    <p class="text-gray-600 text-sm mb-2">Mar 10, 2026 • Media</p>
+                    <p class="text-gray-700">Digital platforms are reshaping how news is consumed. This article examines
+                        the impact of AI and personalization.</p>
+                    <a href="blog3.html" class="nav-link text-brand-meta hover:text-black text-sm">Read more →</a>
+                </article>
+                <div id="full-3" class="hidden mt-4 border border-brand-border p-4 rounded-lg bg-white">
+                    <h3 class="font-serif text-xl mb-2">The Future of Digital Journalism (Full Article)</h3>
+                    <p class="text-gray-700">Full article content placeholder for Digital Journalism.</p>
+                    <a href="blog3.html" class="nav-link text-brand-meta hover:text-black text-sm">Read more →</a>
+                </div>
+                <!-- Blog Post 4 -->
+                <article class="border border-brand-border p-4 rounded-lg">
+                    <h3 class="font-serif text-xl mb-2">Interview with a Climate Activist</h3>
+                    <p class="text-gray-600 text-sm mb-2">Apr 22, 2026 • Environment</p>
+                    <p class="text-gray-700">An in‑depth conversation about climate action, policy challenges, and
+                        grassroots movements.</p>
+                    <a href="blog4.html" class="nav-link text-brand-meta hover:text-black text-sm">Read more →</a>
+                </article>
+                <div id="full-4" class="hidden mt-4 border border-brand-border p-4 rounded-lg bg-white">
+                    <h3 class="font-serif text-xl mb-2">Interview with a Climate Activist (Full Article)</h3>
+                    <p class="text-gray-700">Full article content placeholder for Climate Activist interview.</p>
+                    <a href="javascript:void(0)" data-close="full-4"
+                        class="text-brand-meta hover:text-black text-sm">Close</a>
+                </div>
+                <!-- Blog Post 5 -->
+                <article class="border border-brand-border p-4 rounded-lg">
+                    <h3 class="font-serif text-xl mb-2">Designing for Accessibility</h3>
+                    <p class="text-gray-600 text-sm mb-2">May 5, 2026 • Design</p>
+                    <p class="text-gray-700">Accessibility should be at the core of every design. Here are practical
+                        tips to make your web content inclusive.</p>
+                    <a href="blog5.html" class="nav-link text-brand-meta hover:text-black text-sm">Read more →</a>
+                </article>
+                
+                <!-- Blog Post 6 -->
+                <article class="border border-brand-border p-4 rounded-lg">
+                    <h3 class="font-serif text-xl mb-2">Tech Ethics in 2026</h3>
+                    <p class="text-gray-600 text-sm mb-2">Jun 18, 2026 • Ethics</p>
+                    <p class="text-gray-700">Exploring the ethical dilemmas posed by AI, data privacy, and emerging
+                        technologies this year.</p>
+                    <a href="blog6.html" class="nav-link text-brand-meta hover:text-black text-sm">Read more →</a>
+                </article>
+                
+                <!-- Blog Post 7 -->
+                <article class="border border-brand-border p-4 rounded-lg">
+                    <h3 class="font-serif text-xl mb-2">Travel Writing in a Post‑Pandemic World</h3>
+                    <p class="text-gray-600 text-sm mb-2">Jul 30, 2026 • Travel</p>
+                    <p class="text-gray-700">How travel writers adapt to new norms, safety concerns, and the evolving
+                        expectations of readers.</p>
+                    <a href="blog7.html" class="nav-link text-brand-meta hover:text-black text-sm">Read more →</a>
+                </article>
+                
+                <!-- Add more <article> blocks for additional posts -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer
+        class="pt-8 border-t border-brand-border flex justify-between items-center font-mono text-[10px] uppercase tracking-widest text-brand-meta">
+        <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;"
+            class="hover:text-black transition-colors">↑ Back to top</a>
+        <div>2026 © All rights reserved</div>
+    </footer>
+
+    <!-- Legacy script removed: navigation now via static links -->
+
+</body>
+
+</html>
