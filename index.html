@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riaz Ullah - Portfolio Clone</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@100;400&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            bg: 'rgb(248, 246, 242)',
+                            text: '#222',
+                            meta: '#888',
+                            border: '#e5e5e0',
+                            red: '#990000',
+                            tag: '#f0f0ed'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"EB Garamond"', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                    fontSize: {
+                        'xxs': '0.65rem',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: theme('colors.brand.bg');
+            color: theme('colors.brand.text');
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: theme('colors.brand.bg');
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #d1d5db;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #9ca3af;
+        }
+
+        .image-hover-wrapper img {
+            transition: all 0.4s ease;
+            filter: grayscale(100%) contrast(0.9);
+        }
+
+        .image-hover-wrapper:hover img {
+            filter: grayscale(0%) contrast(1);
+        }
+
+        .tag-style {
+            @apply border border-brand-border px-2 py-0.5 text-xxs uppercase tracking-wider text-brand-meta bg-[#fdfdfc] rounded-sm;
+        }
+
+        .link-hover {
+            @apply hover:text-black transition-colors duration-200;
+        }
+
+        .nav-link {
+            @apply text-brand-meta hover:text-black transition-colors duration-200 uppercase tracking-widest text-[10px];
+        }
+
+        /* Mock Logo Styles */
+        .mock-logo {
+            @apply text-gray-400 font-serif font-bold text-lg md:text-xl filter grayscale opacity-70 transition-opacity duration-300 hover:opacity-100 cursor-pointer;
+        }
+    </style>
+</head>
+
+<body class="font-sans text-sm pb-12">
+
+    <!-- Header Section (Edge-to-Edge Line) -->
+    <div class="border-b border-brand-border">
+        <div class="max-w-[1200px] mx-auto px-6 sm:px-12 lg:px-16">
+            <header class="py-3 flex flex-col md:flex-row justify-between items-center gap-4">
+                <div class="font-serif text-lg tracking-wide cursor-pointer hover:opacity-80">Riaz Ullah</div>
+                <nav class="flex flex-wrap justify-center gap-6 font-mono">
+                    <a href="#" class="nav-link">Work</a>
+                    <a href="#" class="nav-link">Experience</a>
+                    <a href="#" class="nav-link">Awards</a>
+                    <a href="metablog.html"
+                        class="nav-link border border-red-800 px-2 py-0.5 rounded-full hover:border-black">#MetaBlog</a>
+                    <a href="visualjourney.html"
+                        class="nav-link border border-red-800 px-2 py-0.5 rounded-full hover:border-black">#Visual
+                        Journey</a>
+                    <a href="https://x.com/To_be_rizz" target="_blank" rel="noopener noreferrer" class="nav-link">X</a>
+                    <a href="https://www.linkedin.com/in/md-riaz-ullah-39179933a/" target="_blank"
+                        rel="noopener noreferrer" class="nav-link">LinkedIn</a>
+                    <a href="https://letterboxd.com/riaz2005/" target="_blank" rel="noopener noreferrer"
+                        class="nav-link">Letterboxd</a>
+                </nav>
+            </header>
+        </div>
+    </div>
+
+    <!-- Hero Section (Edge-to-Edge Line) -->
+    <div class="border-b border-brand-border">
+        <div class="max-w-[1200px] mx-auto px-6 sm:px-12 lg:px-16">
+            <section class="py-4 md:py-6 flex flex-col md:flex-row gap-12 md:gap-8">
+                <!-- Left Info -->
+                <div class="md:w-2/3 flex flex-col sm:flex-row gap-8">
+                    <div class="flex-shrink-0">
+                        <img src="hero.png" alt="Riaz Ullah"
+                            class="w-28 h-28 rounded-full object-cover filter grayscale">
+                    </div>
+                    <div>
+                        <h1 class="text-5xl md:text-6xl font-serif leading-none mb-4">
+                            Riaz <br>
+                            <span class="italic text-gray-600 font-light">Ullah</span>
+                        </h1>
+                        <p class="font-serif text-[17px] text-gray-700 leading-relaxed max-w-lg mb-4">
+                            Bangladeshi journalist equipped with modern journalistic tools and the ability to craft
+                            stories
+                            that matter.
+                            <a href="#"
+                                class="text-xs font-mono uppercase tracking-widest text-brand-red ml-2 link-hover inline-flex items-center gap-1">More
+                                <span class="text-[10px]">&darr;</span></a>
+                        </p>
+                        <div
+                            class="flex flex-wrap gap-4 font-mono text-[10px] uppercase tracking-widest text-brand-meta mt-6">
+                            <a href="mailto:riaz65070@gmail.com" class="link-hover">Email</a>
+                            <span class="text-gray-300">&bull;</span>
+                            <a href="https://x.com/To_be_rizz" target="_blank" rel="noopener noreferrer"
+                                class="link-hover">X</a>
+                            <span class="text-gray-300">&bull;</span>
+                            <a href="https://www.linkedin.com/in/md-riaz-ullah-39179933a/" target="_blank"
+                                rel="noopener noreferrer" class="link-hover">LinkedIn</a>
+                            <span class="text-gray-300">&bull;</span>
+                            <a href="https://letterboxd.com/riaz2005/" target="_blank" rel="noopener noreferrer"
+                                class="link-hover">Letterboxd</a>
+                            <span class="text-gray-300">&bull;</span>
+                            <a href="CV.pdf" target="_blank" rel="noopener noreferrer" class="link-hover">CV</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Info -->
+                <div class="md:w-1/3 md:pl-12 md:border-l border-brand-border flex flex-col justify-center">
+                    <h2 class="text-3xl md:text-4xl font-serif mb-6 flex items-center gap-3">
+                        <span class="italic text-brand-red font-light">Pol-econ</span>
+                        <span class="text-gray-400 text-lg md:text-xl font-light italic">and</span>
+                        <span class="italic font-light">journalism</span>
+                    </h2>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tag-style">Research</span>
+                        <span class="tag-style">Analysis</span>
+                        <span class="tag-style">Visualization</span>
+                        <span class="tag-style">Vibe Coding</span>
+
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="max-w-[1200px] mx-auto px-6 sm:px-12 lg:px-16">
+
+        <!-- Selected Work Section -->
+        <section class="py-6">
+            <div
+                class="flex flex-col md:flex-row justify-between items-baseline mb-6 border-b border-brand-border pb-4">
+                <h3 class="font-serif text-2xl italic text-gray-500 mb-4 md:mb-0">Selected work</h3>
+                <div class="font-mono text-[10px] uppercase tracking-widest text-brand-meta">
+                    Filter by role, method, or type
+                </div>
+            </div>
+
+            <!-- Filter Bar -->
+            <div
+                class="flex flex-wrap items-center gap-4 text-brand-meta border-b border-brand-border pb-3 mb-10 font-mono text-xs">
+                <button class="text-brand-red font-medium">All</button>
+                <div class="flex items-center gap-4 text-gray-400">
+                    <button class="hover:text-black transition-colors">&#9733;</button> <!-- Star -->
+                    <button class="hover:text-black transition-colors">&#9998;</button> <!-- Pencil -->
+                    <button class="hover:text-black transition-colors">&#8635;</button> <!-- Cycle -->
+                    <button class="hover:text-black transition-colors">&#10010;</button> <!-- Plus -->
+                    <button class="hover:text-black transition-colors">&#8853;</button> <!-- Circled Plus -->
+                    <button class="hover:text-black transition-colors">=</button>
+                    <button class="hover:text-black transition-colors">&#8673;</button> <!-- Up arrow -->
+                    <button class="hover:text-black transition-colors">+</button>
+                    <button class="hover:text-black transition-colors">&#8962;</button> <!-- House -->
+                    <button class="hover:text-black transition-colors">~</button>
+                </div>
+            </div>
+
+            <!-- Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+
+                <!-- Card 1 -->
+                <a href="https://www.observerbd.com/news/506094" target="_blank" rel="noopener noreferrer"
+                    class="group block cursor-pointer image-hover-wrapper flex flex-col">
+                    <div class="w-full aspect-[4/3] bg-gray-200 overflow-hidden mb-4 rounded-sm border border-gray-100">
+                        <img src="https://www.observerbd.com/2025/01/05/ob_1736094086.jpg"
+                            alt="Will media convergence ensure press freedom?" class="w-full h-full object-cover">
+                    </div>
+                    <div
+                        class="flex justify-between items-center font-mono text-[10px] text-brand-meta uppercase tracking-wider mb-2">
+                        <span>Daily Observer <span class="mx-1">&middot;</span> Jan 2025</span>
+                        <span>&#9998; =</span>
+                    </div>
+                    <h4 class="font-serif text-[17px] leading-snug group-hover:text-gray-600 transition-colors">
+                        Will media convergence ensure press freedom?</h4>
+                </a>
+
+                <!-- Card 2 -->
+                <a href="https://www.observerbd.com/news/539444" target="_blank" rel="noopener noreferrer"
+                    class="group block cursor-pointer image-hover-wrapper flex flex-col">
+                    <div class="w-full aspect-[4/3] bg-gray-200 overflow-hidden mb-4 rounded-sm border border-gray-100">
+                        <img src="https://www.observerbd.com/2025/08/15/ob_1755272947.jpg"
+                            alt="Bengal Divided: For which cause? At what cost?" class="w-full h-full object-cover">
+                    </div>
+                    <div
+                        class="flex justify-between items-center font-mono text-[10px] text-brand-meta uppercase tracking-wider mb-2">
+                        <span>Daily Observer <span class="mx-1">&middot;</span> Aug 2025</span>
+                        <span>~</span>
+                    </div>
+                    <h4 class="font-serif text-[17px] leading-snug group-hover:text-gray-600 transition-colors">
+                        Bengal Divided: For which cause? At what cost?</h4>
+                </a>
+
+                <!-- Card 3 -->
+                <a href="https://www.observerbd.com/news/528075" target="_blank" rel="noopener noreferrer"
+                    class="group block cursor-pointer image-hover-wrapper flex flex-col">
+                    <div class="w-full aspect-[4/3] bg-gray-200 overflow-hidden mb-4 rounded-sm border border-gray-100">
+                        <img src="https://www.observerbd.com/2025/05/31/ob_1748707385.jpg"
+                            alt="How Monroe became US's wartime soft power?" class="w-full h-full object-cover">
+                    </div>
+                    <div
+                        class="flex justify-between items-center font-mono text-[10px] text-brand-meta uppercase tracking-wider mb-2">
+                        <span>Daily Observer <span class="mx-1">&middot;</span> May 2025</span>
+                        <span>~</span>
+                    </div>
+                    <h4 class="font-serif text-[17px] leading-snug group-hover:text-gray-600 transition-colors">
+                        How Monroe became US's wartime soft power?</h4>
+                </a>
+
+                <!-- Card 4 -->
+                <a href="https://www.dailypost.net/lifestyle/c7m" target="_blank" rel="noopener noreferrer"
+                    class="group block cursor-pointer image-hover-wrapper flex flex-col">
+                    <div class="w-full aspect-[4/3] bg-gray-200 overflow-hidden mb-4 rounded-sm border border-gray-100">
+                        <img src="Happiness procrastination.jpeg" alt="Happiness procrastination: When to be happy"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div
+                        class="flex justify-between items-center font-mono text-[10px] text-brand-meta uppercase tracking-wider mb-2">
+                        <span>Daily Post <span class="mx-1">&middot;</span> Dec 2025</span>
+                        <span>~</span>
+                    </div>
+                    <h4 class="font-serif text-[17px] leading-snug group-hover:text-gray-600 transition-colors">
+                        Happiness procrastination: When to be happy</h4>
+                </a>
+
+                <!-- Card 5 -->
+                <a href="https://www.dailypost.net/lifestyle/c6x" target="_blank" rel="noopener noreferrer"
+                    class="group block cursor-pointer image-hover-wrapper flex flex-col">
+                    <div class="w-full aspect-[4/3] bg-gray-200 overflow-hidden mb-4 rounded-sm border border-gray-100">
+                        <img src="Fashion and Philosophy.jpeg"
+                            alt="Fashion and Philosophy: Why do we care about clothing?"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div
+                        class="flex justify-between items-center font-mono text-[10px] text-brand-meta uppercase tracking-wider mb-2">
+                        <span>Daily Post <span class="mx-1">&middot;</span> Dec 2025</span>
+                        <span>~</span>
+                    </div>
+                    <h4 class="font-serif text-[17px] leading-snug group-hover:text-gray-600 transition-colors">
+                        Fashion and Philosophy: Why do we care about clothing?</h4>
+                </a>
+
+                <!-- Card 6 -->
+                <a href="https://www.dailypost.net/sports/c9m" target="_blank" rel="noopener noreferrer"
+                    class="group block cursor-pointer image-hover-wrapper flex flex-col">
+                    <div class="w-full aspect-[4/3] bg-gray-200 overflow-hidden mb-4 rounded-sm border border-gray-100">
+                        <img src="Between passion and the classroom.jpeg"
+                            alt="Between passion and the classroom: they find it hard to balance"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div
+                        class="flex justify-between items-center font-mono text-[10px] text-brand-meta uppercase tracking-wider mb-2">
+                        <span>Daily Post <span class="mx-1">&middot;</span> Feb 2026</span>
+                        <span>~</span>
+                    </div>
+                    <h4 class="font-serif text-[17px] leading-snug group-hover:text-gray-600 transition-colors">
+                        Between passion and the classroom: they find it hard to balance</h4>
+                </a>
+
+                <!-- Card 7 -->
+                <a href="https://www.dailypost.net/national/cf3" target="_blank" rel="noopener noreferrer"
+                    class="group block cursor-pointer image-hover-wrapper flex flex-col">
+                    <div class="w-full aspect-[4/3] bg-gray-200 overflow-hidden mb-4 rounded-sm border border-gray-100">
+                        <img src="Curtain falls silent as Ramadan, Rain and uncertainty mark it dull.jpeg"
+                            alt="Curtain falls silent as Ramadan, Rain and uncertainty mark it dull"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div
+                        class="flex justify-between items-center font-mono text-[10px] text-brand-meta uppercase tracking-wider mb-2">
+                        <span>Daily Post <span class="mx-1">&middot;</span> Mar 2026</span>
+                        <span>~</span>
+                    </div>
+                    <h4 class="font-serif text-[17px] leading-snug group-hover:text-gray-600 transition-colors">
+                        Curtain falls silent as Ramadan, Rain and uncertainty mark it dull</h4>
+                </a>
+
+                <!-- Card 8 -->
+                <a href="https://thefinancialexpress.com.bd/bn/zuge-zuge-salami-sngskrritir-ze-bibrtn" target="_blank"
+                    rel="noopener noreferrer" class="group block cursor-pointer image-hover-wrapper flex flex-col">
+                    <div class="w-full aspect-[4/3] bg-gray-200 overflow-hidden mb-4 rounded-sm border border-gray-100">
+                        <img src="https://thefe-bd.sgp1.cdn.digitaloceanspaces.com/posts/89565/eid-salami.png"
+                            alt="যুগ যুগে সালামি সংস্কৃতির যে বিবর্তন" class="w-full h-full object-cover">
+                    </div>
+                    <div
+                        class="flex justify-between items-center font-mono text-[10px] text-brand-meta uppercase tracking-wider mb-2">
+                        <span>Financial Express <span class="mx-1">&middot;</span> Mar 2025</span>
+                        <span>&#9998; =</span>
+                    </div>
+                    <h4 class="font-serif text-[17px] leading-snug group-hover:text-gray-600 transition-colors">
+                        যুগ যুগে সালামি সংস্কৃতির যে বিবর্তন</h4>
+                </a>
+
+                <!-- Card 9 -->
+                <a href="https://thefinancialexpress.com.bd/bn/jhilimili-beluner-jhlkanir-arale-shure-zt-ktha"
+                    target="_blank" rel="noopener noreferrer"
+                    class="group block cursor-pointer image-hover-wrapper flex flex-col">
+                    <div class="w-full aspect-[4/3] bg-gray-200 overflow-hidden mb-4 rounded-sm border border-gray-100">
+                        <img src="https://thefe-bd.sgp1.cdn.digitaloceanspaces.com/posts/75226/jhilmil-baloon.jpg"
+                            alt="ঝিলিমিলি বেলুনের ঝলকানির আড়ালে শহুরে যত কথা" class="w-full h-full object-cover">
+                    </div>
+                    <div
+                        class="flex justify-between items-center font-mono text-[10px] text-brand-meta uppercase tracking-wider mb-2">
+                        <span>Financial Express <span class="mx-1">&middot;</span> Dec 2024</span>
+                        <span>&#9998; =</span>
+                    </div>
+                    <h4 class="font-serif text-[17px] leading-snug group-hover:text-gray-600 transition-colors">
+                        ঝিলিমিলি বেলুনের ঝলকানির আড়ালে শহুরে যত কথা</h4>
+                </a>
+
+            </div>
+
+            <div class="flex justify-center border-b border-brand-border pb-16">
+                <button
+                    class="font-mono text-[10px] uppercase tracking-widest text-brand-meta border border-brand-border px-6 py-2 hover:border-black hover:text-black transition-all bg-[#fdfdfc]">View
+                    More (16)</button>
+            </div>
+        </section>
+
+        <!-- Logos Section -->
+        <section
+            class="py-12 bg-[#f4f4f1] -mx-6 sm:-mx-12 lg:-mx-16 px-6 sm:px-12 lg:px-16 flex flex-col md:flex-row gap-12 border-b border-brand-border">
+            <div class="w-full">
+                <h5 class="font-mono text-[10px] uppercase tracking-widest text-brand-meta mb-6">Works Appeared In</h5>
+                <div class="flex flex-wrap items-center gap-x-8 gap-y-6">
+                    <a href="https://observerbd.com/" target="_blank" rel="noopener noreferrer" class="block">
+                        <img src="https://observerbd.com/images/logo.png" alt="Daily Observer"
+                            class="h-7 md:h-9 filter grayscale opacity-70 hover:opacity-100 transition-opacity duration-300 object-contain cursor-pointer">
+                    </a>
+                    <a href="https://thefinancialexpress.com.bd/" target="_blank" rel="noopener noreferrer"
+                        class="block">
+                        <img src="https://thefinancialexpress.com.bd/assets/logos/FE-Logo-English-Black.svg"
+                            alt="Financial Express"
+                            class="h-7 md:h-9 filter grayscale opacity-70 hover:opacity-100 transition-opacity duration-300 object-contain cursor-pointer">
+                    </a>
+                    <a href="https://www.dailypost.net/" target="_blank" rel="noopener noreferrer" class="block">
+                        <img src="https://www.dailypost.net/assets/img/dailypost.png" alt="Daily Post"
+                            class="h-7 md:h-9 filter grayscale opacity-70 hover:opacity-100 transition-opacity duration-300 object-contain cursor-pointer">
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="py-16 border-b border-brand-border">
+            <div class="flex justify-between items-baseline mb-12 border-b border-brand-border pb-4">
+                <h3 class="font-serif text-2xl italic text-gray-500">Experience</h3>
+                <button id="toggle-exp"
+                    class="font-mono text-[10px] uppercase tracking-widest text-brand-meta border border-brand-border px-3 py-1 hover:border-black hover:text-black transition-all bg-[#fdfdfc] flex items-center gap-2">
+                    Expanded View <span id="toggle-icon">&or;</span>
+                </button>
+            </div>
+
+            <div class="space-y-12" id="experience-list">
+                <!-- Item 1 -->
+                <div
+                    class="flex flex-col md:flex-row gap-4 md:gap-8 border-b border-brand-border pb-10 last:border-0 last:pb-0">
+                    <div class="md:w-1/4 flex-shrink-0">
+                        <h4 class="font-medium text-sm text-gray-900 mb-1">The Daily Inqilab</h4>
+                        <div class="font-mono text-[10px] text-brand-meta uppercase tracking-wider space-y-0.5">
+                            <div>Aug 2026 &mdash; Present</div>
+                            <div>Dhaka, Bangladesh</div>
+                        </div>
+                    </div>
+                    <div class="md:w-3/4">
+                        <h5 class="font-serif italic text-lg text-gray-800 mb-2">Sub Editor</h5>
+                        <p class="text-gray-600 leading-relaxed font-light text-[14px] exp-desc">&mdash; Translating
+                            news
+                            and maintaining the English version of The Daily Inqilab, one of the oldest and finest news
+                            sources of Bangladesh.</p>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div
+                    class="flex flex-col md:flex-row gap-4 md:gap-8 border-b border-brand-border pb-10 last:border-0 last:pb-0">
+                    <div class="md:w-1/4 flex-shrink-0">
+                        <h4 class="font-medium text-sm text-gray-900 mb-1">The Financial Express</h4>
+                        <div class="font-mono text-[10px] text-brand-meta uppercase tracking-wider space-y-0.5">
+                            <div>Dec 2024 &mdash; Present &middot; 1 yr 7 mos</div>
+                            <div>Freelance &middot; Dhaka, Bangladesh</div>
+                        </div>
+                    </div>
+                    <div class="md:w-3/4">
+                        <h5 class="font-serif italic text-lg text-gray-800 mb-2">Freelance Features Writer</h5>
+                        <p class="text-gray-600 leading-relaxed font-light text-[14px] exp-desc">&mdash; Wrote engaging,
+                            in-depth feature stories focusing on contemporary culture, human interest, and
+                            socio-economic perspectives.</p>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div
+                    class="flex flex-col md:flex-row gap-4 md:gap-8 border-b border-brand-border pb-10 last:border-0 last:pb-0">
+                    <div class="md:w-1/4 flex-shrink-0">
+                        <h4 class="font-medium text-sm text-gray-900 mb-1">The Daily Observer (Bangladesh)</h4>
+                        <div class="font-mono text-[10px] text-brand-meta uppercase tracking-wider space-y-0.5">
+                            <div>Dec 2024 &mdash; Feb 2025 &middot; 3 mos</div>
+                            <div>Freelance &middot; Dhaka, Bangladesh</div>
+                        </div>
+                    </div>
+                    <div class="md:w-3/4">
+                        <h5 class="font-serif italic text-lg text-gray-800 mb-2">Contributor</h5>
+                        <p class="text-gray-600 leading-relaxed font-light text-[14px] exp-desc">&mdash; Wrote
+                            compelling op-eds and analytical opinion pieces for the newspaper, focusing on national
+                            issues and cultural topics.</p>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div
+                    class="flex flex-col md:flex-row gap-4 md:gap-8 border-b border-brand-border pb-10 last:border-0 last:pb-0">
+                    <div class="md:w-1/4 flex-shrink-0">
+                        <h4 class="font-medium text-sm text-gray-900 mb-1">The Daily Bhorer Kagoj</h4>
+                        <div class="font-mono text-[10px] text-brand-meta uppercase tracking-wider space-y-0.5">
+                            <div>Jan 2024 &mdash; Feb 2025 &middot; 1 yr 2 mos</div>
+                            <div>Part-time &middot; Dhaka, Bangladesh</div>
+                        </div>
+                    </div>
+                    <div class="md:w-3/4">
+                        <h5 class="font-serif italic text-lg text-gray-800 mb-2">Sub Editor</h5>
+                        <p class="text-gray-600 leading-relaxed font-light text-[14px] exp-desc">&mdash; Edited,
+                            proofread, and formatted incoming news copy, crafted headlines, and ensured adherence to the
+                            newspaper's editorial standards.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Bottom Columns -->
+        <section class="py-16">
+
+            <!-- Education -->
+            <div class="max-w-md">
+                <h3 class="font-serif text-xl italic text-gray-500 mb-8 border-b border-brand-border pb-4">Education
+                </h3>
+                <div class="space-y-8">
+                    <div>
+                        <h4 class="font-medium text-gray-900 mb-1">University of Dhaka</h4>
+                        <div class="font-mono text-[10px] text-brand-meta mb-2">Class of 2026</div>
+                        <p class="text-gray-600 italic font-serif text-sm">BSS (Honours) in Mass Communication and
+                            Journalism</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Footer -->
+        <footer
+            class="pt-8 border-t border-brand-border flex justify-between items-center font-mono text-[10px] uppercase tracking-widest text-brand-meta">
+            <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;"
+                class="hover:text-black transition-colors">&uarr; Back to top</a>
+            <div>2026 &copy; All rights reserved</div>
+        </footer>
+
+    </div>
+
+    <script>
+        // Simple script to toggle experience descriptions
+        const toggleBtn = document.getElementById('toggle-exp');
+        const descriptions = document.querySelectorAll('.exp-desc');
+        let isExpanded = true;
+
+        toggleBtn.addEventListener('click', () => {
+            isExpanded = !isExpanded;
+            descriptions.forEach(desc => {
+                if (isExpanded) {
+                    desc.style.display = 'block';
+                } else {
+                    desc.style.display = 'none';
+                }
+            });
+
+            toggleBtn.innerHTML = isExpanded
+                ? 'Compact View <span id="toggle-icon">&and;</span>'
+                : 'Expanded View <span id="toggle-icon">&or;</span>';
+        });
+    </script>
+</body>
+
+</html>
